@@ -19,32 +19,30 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="min-h-screen bg-white flex flex-col font-sans antialiased">
         
-        {/* 1. HEADER - Organizado para não quebrar no PC */}
-<header className="w-full bg-white border-b border-gray-100">
-  <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 md:py-8 flex flex-col md:flex-row justify-between items-center gap-6">
-    
-    {/* Lado Esquerdo: Logo MTM e Título */}
-    <div className="flex items-center gap-4">
-      <img src="/logo-mtm.png" alt="Logo MTM" className="h-10 md:h-20 w-auto object-contain" />
-      <div className="h-8 w-[1px] bg-gray-200 hidden md:block"></div>
-      <div className="text-[#0a1931] uppercase">
-        <h1 className="font-bold text-xs md:text-xl tracking-tighter leading-none">Departamento de Matemática</h1>
-        <p className="text-[9px] md:text-xs text-gray-500 font-medium normal-case">Universidade Federal de Santa Catarina</p>
+        {/* 1. HEADER RESPONSIVO AJUSTADO */}
+<header className="px-4 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center bg-white w-full gap-4">
+  <div className="flex items-center justify-between w-full md:w-auto">
+    <div className="flex items-center">
+      <img src="/logo-mtm.png" alt="Logo MTM" className="h-6 md:h-14 w-auto object-contain" />
+      <div className="text-[#0a1931] font-bold text-[10px] md:text-sm leading-tight uppercase ml-3">
+        Departamento de Matemática<br/>
+        <span className="font-medium normal-case text-[8px] md:text-[10px] text-gray-500">UFSC</span>
       </div>
     </div>
-
-    {/* Lado Direito: Brasão UFSC - Escondemos o central que estava bugado */}
-    <div className="flex items-center gap-6">
-      <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-14 md:h-32 w-auto object-contain" />
-      
-      {/* Configurações/Idioma - Só aparece no PC para não poluir */}
-      <div className="hidden md:flex flex-col items-end gap-2">
-        <div className="text-[10px] font-bold border px-2 py-1 rounded cursor-pointer hover:bg-gray-50">🇧🇷 PT ▾</div>
-        <span className="opacity-20 text-xl">⚙️</span>
-      </div>
-    </div>
+    {/* No mobile, a logo da UFSC fica pequena no canto ou sumimos com ela para dar espaço */}
+    <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-12 md:h-24 w-auto object-contain md:hidden" />
   </div>
-</header>
+  
+          <div className="flex items-center scale-75 md:scale-100">
+            <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-24 md:h-32 w-auto object-contain md:mr-12" />
+            <div className="hidden md:flex flex-col items-end space-y-2">
+              <div className="flex items-center text-[10px] font-bold border rounded px-2 py-1 gap-1 cursor-pointer hover:bg-gray-50">
+                🇧🇷 PT ▾
+              </div>
+              <span className="text-xl opacity-30 cursor-pointer">⚙️</span>
+            </div>
+          </div>
+        </header>
 
         {/* 2. NAVEGAÇÃO RESPONSIVA */}
         <nav className="bg-[#eeeeee] border-y border-gray-200 px-6 md:px-12 py-2 w-full relative z-50">
@@ -113,7 +111,7 @@ export default function RootLayout({
               </li>
             </ul>
 
-            <Busca />
+            <Busca />n
           </div>
 
           {/* MENU MOBILE (Só aparece quando clicado) */}
