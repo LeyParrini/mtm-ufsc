@@ -125,7 +125,7 @@ export default function RootLayout({
                   onClick={() => toggleSubmenu('grad')}
                   className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
                 >
-                  Graduação <span>{openSubmenu === 'grad' ? '−' : '+'}</span>
+                  GRADUAÇÃO <span>{openSubmenu === 'grad' ? '−' : '+'}</span>
                 </button>
                 {openSubmenu === 'grad' && (
                   <div className="bg-gray-100 ml-4 rounded-lg">
@@ -146,7 +146,7 @@ export default function RootLayout({
                   onClick={() => toggleSubmenu('pesquisa')}
                   className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
                 >
-                  Pesquisa <span>{openSubmenu === 'pesquisa' ? '−' : '+'}</span>
+                  PESQUISA <span>{openSubmenu === 'pesquisa' ? '−' : '+'}</span>
                 </button>
                 {openSubmenu === 'pesquisa' && (
                   <div className="bg-gray-100 ml-4 rounded-lg">
@@ -162,7 +162,7 @@ export default function RootLayout({
                   onClick={() => toggleSubmenu('ext')}
                   className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
                 >
-                  Extensão <span>{openSubmenu === 'ext' ? '−' : '+'}</span>
+                  EXTENSÃO <span>{openSubmenu === 'ext' ? '−' : '+'}</span>
                 </button>
                 {openSubmenu === 'ext' && (
                   <div className="bg-gray-100 ml-4 rounded-lg">
@@ -173,9 +173,9 @@ export default function RootLayout({
 
               {/* Links Mobile sem dropdown */}
 
-              <li><a href="/eventos" className="block p-3 hover:bg-white rounded">Eventos</a></li>
-              <li><a href="/bolsas-estagios" className="block p-3 hover:bg-white">Bolsas</a></li>
-              <li><a href="/recursos" className="block p-3 hover:bg-white">Recursos</a></li>
+              <li><a href="/eventos" className="block p-3 hover:bg-white rounded">EVENTOS</a></li>
+              <li><a href="/bolsas-estagios" className="block p-3 hover:bg-white">BOLSAS</a></li>
+              <li><a href="/recursos" className="block p-3 hover:bg-white">RECURSOS</a></li>
               <li><a href="/faq" className="block p-3 text-blue-700 font-black italic underline">FAQ</a></li>
             </ul>
           )}
