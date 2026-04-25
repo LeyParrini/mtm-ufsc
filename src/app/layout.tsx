@@ -134,6 +134,27 @@ export default function RootLayout({
                   </div>
                 )}
               </li>
+ 
+              {/* Dropdown Mobile: Pós-graduação */}
+              <li>
+                <a href="https://ppgmtm.posgrad.ufsc.br/ingresso/" target="_blank" className="block p-3 hover:bg-white rounded">Pós-graduação</a>
+              </li>
+
+              {/* Dropdown Mobile: Pesquisa */}
+              <li>
+                <button
+                  onClick={() => toggleSubmenu('pesquisa')}
+                  className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
+                >
+                  Pesquisa <span>{openSubmenu === 'pesquisa' ? '−' : '+'}</span>
+                </button>
+                {openSubmenu === 'pesquisa' && (
+                  <div className="bg-gray-100 ml-4 rounded-lg">
+                    <a href="/camara" className="block p-3 border-b border-gray-200">Câmara de Pesquisa</a>
+                    <a href="/pesquisa" className="block p-3">Áreas de pesquisa</a>
+                  </div>
+                )}
+              </li>
 
               {/* Dropdown Mobile: Extensão */}
               <li>
@@ -150,7 +171,11 @@ export default function RootLayout({
                 )}
               </li>
 
+              {/* Links Mobile sem dropdown */}
+
+              <li><a href="/eventos" className="block p-3 hover:bg-white rounded">Eventos</a></li>
               <li><a href="/bolsas-estagios" className="block p-3 hover:bg-white">Bolsas</a></li>
+              <li><a href="/recursos" className="block p-3 hover:bg-white">Recursos</a></li>
               <li><a href="/faq" className="block p-3 text-blue-700 font-black italic underline">FAQ</a></li>
             </ul>
           )}
