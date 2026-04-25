@@ -19,20 +19,20 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="min-h-screen bg-white flex flex-col font-sans antialiased">
         
-        {/* HEADER */}
-        <header className="px-6 md:px-12 py-4 md:py-6 flex flex-col md:flex-row justify-between items-center bg-white w-full gap-4">
-          <div className="flex items-center">
-            {/* Logo diminui no celular */}
-            <img src="/logo-mtm.png" alt="Logo MTM" className="h-12 md:h-16 w-auto object-contain" />
-            <div className="hidden md:block h-10 w-[2px] bg-gray-200 mx-6"></div> 
-            <div className="text-[#0a1931] font-bold text-[10px] md:text-sm leading-tight uppercase ml-4 md:ml-0">
-              Departamento de Matemática<br/>
-              <span className="font-medium normal-case text-[9px] md:text-[10px] text-gray-500">
-                Universidade Federal de Santa Catarina
-              </span>
-            </div>
-          </div>
-          
+        {/* 1. HEADER RESPONSIVO AJUSTADO */}
+<header className="px-4 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center bg-white w-full gap-4">
+  <div className="flex items-center justify-between w-full md:w-auto">
+    <div className="flex items-center">
+      <img src="/logo-mtm.png" alt="Logo MTM" className="h-10 md:h-16 w-auto object-contain" />
+      <div className="text-[#0a1931] font-bold text-[10px] md:text-sm leading-tight uppercase ml-3">
+        Departamento de Matemática<br/>
+        <span className="font-medium normal-case text-[8px] md:text-[10px] text-gray-500">UFSC</span>
+      </div>
+    </div>
+    {/* No mobile, a logo da UFSC fica pequena no canto ou sumimos com ela para dar espaço */}
+    <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-12 md:h-24 w-auto object-contain md:hidden" />
+  </div>
+  
           <div className="flex items-center scale-75 md:scale-100">
             <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-24 md:h-32 w-auto object-contain md:mr-12" />
             <div className="hidden md:flex flex-col items-end space-y-2">
@@ -131,6 +131,8 @@ export default function RootLayout({
                   <div className="bg-gray-100 ml-4 rounded-lg">
                     <a href="/bacharelado" className="block p-3 border-b border-gray-200">Bacharelado</a>
                     <a href="/licenciatura" className="block p-3">Licenciatura</a>
+                    <a href="/calendario-academico" className="block p-3 border-t border-gray-200">Calendário Acadêmico</a>
+                    <a href="https://mtm.grad.ufsc.br/trabalho-de-conclusao-de-curso/" target="_blank" className="block p-3 border-t border-gray-200">TCC I e II</a>
                   </div>
                 )}
               </li>
@@ -167,6 +169,8 @@ export default function RootLayout({
                 {openSubmenu === 'ext' && (
                   <div className="bg-gray-100 ml-4 rounded-lg">
                     <a href="https://petmatematica.paginas.ufsc.br/" className="block p-3">PET</a>
+                    <a href="https://lemat.sites.ufsc.br/" className="block p-3 border-t border-gray-200">LEMAT</a>
+                    <a href="https://monitoriamtm.ufsc.br/" className="block p-3 border-t border-gray-200">Monitorias</a>
                   </div>
                 )}
               </li>
