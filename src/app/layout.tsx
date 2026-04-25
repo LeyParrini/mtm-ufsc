@@ -11,7 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const toggleSubmenu = (name: string) => {
+  setOpenSubmenu(openSubmenu === name ? null : name);
+};
   return (
     <html lang="pt-br">
       <body className="min-h-screen bg-white flex flex-col font-sans antialiased">
@@ -113,12 +116,42 @@ export default function RootLayout({
 
           {/* MENU MOBILE (Só aparece quando clicado) */}
           {isMenuOpen && (
-            <ul className="md:hidden mt-4 pb-4 space-y-2 text-[12px] font-bold uppercase text-gray-600 border-t border-gray-200 pt-4">
-              <li><a href="/" className="block p-2 hover:bg-white rounded">Início</a></li>
-              <li><a href="/bacharelado" className="block p-2 hover:bg-white rounded">Bacharelado</a></li>
-              <li><a href="/licenciatura" className="block p-2 hover:bg-white rounded">Licenciatura</a></li>
-              <li><a href="/bolsas-estagios" className="block p-2 hover:bg-white rounded">Bolsas</a></li>
-              <li><a href="/recursos" className="block p-2 hover:bg-white rounded text-blue-700 font-black">FAQ</a></li>
+            <ul className="md:hidden mt-4 pb-4 space-y-1 text-[12px] font-bold uppercase text-gray-600 border-t border-gray-200 pt-4">
+              <li><a href="/" className="block p-3 hover:bg-white rounded">Início</a></li>
+              
+              {/* Dropdown Mobile: Graduação */}
+              <li>
+                <button 
+                  onClick={() => toggleSubmenu('grad')}
+                  className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
+                >
+                  Graduação <span>{openSubmenu === 'grad' ? '−' : '+'}</span>
+                </button>
+                {openSubmenu === 'grad' && (
+                  <div className="bg-gray-100 ml-4 rounded-lg">
+                    <a href="/bacharelado" className="block p-3 border-b border-gray-200">Bacharelado</a>
+                    <a href="/licenciatura" className="block p-3">Licenciatura</a>
+                  </div>
+                )}
+              </li>
+
+              {/* Dropdown Mobile: Extensão */}
+              <li>
+                <button 
+                  onClick={() => toggleSubmenu('ext')}
+                  className="w-full flex justify-between items-center p-3 hover:bg-white rounded"
+                >
+                  Extensão <span>{openSubmenu === 'ext' ? '−' : '+'}</span>
+                </button>
+                {openSubmenu === 'ext' && (
+                  <div className="bg-gray-100 ml-4 rounded-lg">
+                    <a href="https://petmatematica.paginas.ufsc.br/" className="block p-3">PET</a>
+                  </div>
+                )}
+              </li>
+
+              <li><a href="/bolsas-estagios" className="block p-3 hover:bg-white">Bolsas</a></li>
+              <li><a href="/faq" className="block p-3 text-blue-700 font-black italic underline">FAQ</a></li>
             </ul>
           )}
         </nav>
