@@ -4,7 +4,7 @@ export default function ApresentacaoPage() {
 
   {/* Título com Barra Amarela */}
   <div className="border-l-8 border-[#f0c419] pl-6 mb-12">
-    <h1 className="text-4xl font-extrabold text-[#0a1931] ">
+    <h1 className="text-4xl font-extrabold text-[#0a1931]">
       Conheça o Curso de Matemática
     </h1>
     <p className="text-gray-500 text-sm mt-1 font-medium">
