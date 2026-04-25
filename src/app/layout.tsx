@@ -19,30 +19,41 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className="min-h-screen bg-white flex flex-col font-sans antialiased">
         
-        {/* 1. HEADER RESPONSIVO AJUSTADO */}
-<header className="px-4 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center bg-white w-full gap-4">
-  <div className="flex items-center justify-between w-full md:w-auto">
-    <div className="flex items-center">
-      <img src="/logo-mtm.png" alt="Logo MTM" className="h-6 md:h-14 w-auto object-contain" />
-      <div className="text-[#0a1931] font-bold text-[10px] md:text-sm leading-tight uppercase ml-3">
-        Departamento de Matemática<br/>
-        <span className="font-medium normal-case text-[8px] md:text-[10px] text-gray-500">UFSC</span>
+        {/* HEADER - Ajuste de Alinhamento */}
+<header className="w-full bg-white">
+  {/* O segredo está nesta div abaixo: max-w limita o PC, mx-auto centraliza */}
+  <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 md:py-8 flex flex-row justify-between items-center w-full">
+    
+    {/* LADO ESQUERDO: LOGO MTM + TEXTO */}
+    <div className="flex items-center gap-3 md:gap-4">
+      {/* Teste h-12 para mobile e h-20 para PC */}
+      <img 
+        src="/logo-mtm.png" 
+        alt="Logo MTM" 
+        className="h-10 md:h-20 w-auto object-contain" 
+      />
+      <div className="text-[#0a1931] uppercase border-l border-gray-200 pl-3 md:pl-4">
+        <h1 className="font-bold text-[10px] md:text-xl tracking-tighter leading-none">
+          Departamento de<br className="md:hidden"/> Matemática
+        </h1>
+        <p className="text-[8px] md:text-xs text-gray-500 font-medium normal-case">
+          UFSC
+        </p>
       </div>
     </div>
-    {/* No mobile, a logo da UFSC fica pequena no canto ou sumimos com ela para dar espaço */}
-    <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-12 md:h-24 w-auto object-contain md:hidden" />
+
+    {/* LADO DIREITO: BRASÃO UFSC */}
+    <div className="flex items-center">
+      {/* h-14 para mobile e h-32 para PC - Ajuste conforme seu gosto */}
+      <img 
+        src="/logo-ufsc.png" 
+        alt="Brasão UFSC" 
+        className="h-14 md:h-32 w-auto object-contain" 
+      />
+    </div>
+
   </div>
-  
-          <div className="flex items-center scale-75 md:scale-100">
-            <img src="/logo-ufsc.png" alt="Brasão UFSC" className="h-24 md:h-32 w-auto object-contain md:mr-12" />
-            <div className="hidden md:flex flex-col items-end space-y-2">
-              <div className="flex items-center text-[10px] font-bold border rounded px-2 py-1 gap-1 cursor-pointer hover:bg-gray-50">
-                🇧🇷 PT ▾
-              </div>
-              <span className="text-xl opacity-30 cursor-pointer">⚙️</span>
-            </div>
-          </div>
-        </header>
+</header>
 
         {/* 2. NAVEGAÇÃO RESPONSIVA */}
         <nav className="bg-[#eeeeee] border-y border-gray-200 px-6 md:px-12 py-2 w-full relative z-50">
