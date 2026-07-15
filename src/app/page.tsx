@@ -11,6 +11,7 @@ export default function Home() {
       imagem: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=1000",
       link: "https://petmatematica.paginas.ufsc.br/fermat/"
     },
+
     {
       id: 2,
       titulo: "Inscrições Abertas: Mestrado",
@@ -18,12 +19,14 @@ export default function Home() {
       imagem: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000",
       link: "https://ppgmtm.posgrad.ufsc.br/"
     },
+
     {
       id: 3,
       titulo: "Bolsa de Iniciação Científica disponível",
       resumo: " Trata-se de uma oportunidade para trabalhar no projeto para o desenvolvimento de um tomógrafo de laboratório, com ênfase em reconstrução de imagens e processamento de sinais. O projeto é interdisciplinar, envolvendo conhecimentos de matemática, programação e física.",
       imagem: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000",
       link: "https://fabiomargotti.paginas.ufsc.br/prototipo/"
+
     }
   ];
 
@@ -38,8 +41,7 @@ export default function Home() {
   }, [noticias.length]);
 
   return (
-    <main className="min-h-screen bg-white">
-      
+    <main className="min-h-screen transition-colors duration-500">
       {/* SEÇÃO DO CARROSSEL DE NOTÍCIAS */}
       <section className="relative w-full h-[500px] overflow-hidden bg-gray-900">
         {noticias.map((item, idx) => (
@@ -50,7 +52,7 @@ export default function Home() {
             }`}
           >
             {/* Imagem de Fundo com Overlay Escuro */}
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${item.imagem})` }}
             >
@@ -68,9 +70,9 @@ export default function Home() {
               <p className="mt-6 text-lg text-blue-100 max-w-xl font-light">
                 {item.resumo}
               </p>
-              <a 
-                href={item.link} 
-                target="_blank" 
+              <a
+                href={item.link}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold uppercase text-xs tracking-widest px-8 py-4 w-fit transition-all hover:scale-105 active:scale-95 inline-block"
               >
@@ -94,11 +96,11 @@ export default function Home() {
         </div>
 
         {/* Botões Lateral (Opcional) */}
-        <button 
+        <button
             onClick={() => setIndexAtual(indexAtual === 0 ? noticias.length - 1 : indexAtual - 1)}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-2xl px-4"
         > ❮ </button>
-        <button 
+        <button
             onClick={() => setIndexAtual(indexAtual === noticias.length - 1 ? 0 : indexAtual + 1)}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-2xl px-4"
     > ❯ </button>
@@ -112,7 +114,7 @@ export default function Home() {
         { nome: 'Campus', rota: '/campus' }
       ].map((item) => (
         <a key={item.nome} href={item.rota} className="block">
-          <div className="group bg-[#0a1931] text-white rounded-full py-4 px-10 flex justify-between items-center shadow-lg hover:bg-[#152b50] cursor-pointer transition-all active:scale-[0.98]">
+          <div className="group bg-[#0a1931] dark:bg-[#1e293b] text-white rounded-full py-4 px-10 flex justify-between items-center shadow-lg hover:bg-[#152b50] dark:hover:bg-[#334155] cursor-pointer transition-all active:scale-[0.98] border border-transparent dark:border-gray-700">
             <span className="font-bold tracking-widest uppercase text-xs">{item.nome}</span>
             <span className="text-xl group-hover:translate-x-1 transition-transform">+</span>
           </div>

@@ -77,10 +77,10 @@ export default function Campus() {
       <section className="max-w-6xl mx-auto mt-20 px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-[#0a1931] mb-6">Guia Rápido do Departamento</h2>
+            <h2 className="text-3xl font-bold text-[#0a1931] mb-6">Guia prático do Departamento</h2>
             <p className="text-gray-600 mb-8 leading-relaxed">
               O Departamento de Matemática está situado no Centro de Ciências Físicas e Matemáticas (CFM). 
-              Aqui estão os principais locais que você precisará frequentar:
+              Aqui estão os principais locais que você pode frequentar:
             </p>
             
             <div className="space-y-4">
