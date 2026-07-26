@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <p>📧 mtm@contato.ufsc.br</p>
                   <p>📞 (48) 3721-3354</p>
                   
-                  {/* Correção do Link do Instagram envolvendo o ícone e o texto */}
+                  {/* Link do Instagram envolvendo o ícone e o texto */}
                   <a
                     href="https://www.instagram.com/mtm.ufsc"
                     target="_blank"
@@ -59,8 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
               </div>
 
-              {/* MAPA */}
-              <div className="flex-1 w-full h-[250px] rounded-lg overflow-hidden shadow-2xl border-2 border-[#152b50]">
+              <div className="flex-1 h-80 rounded-lg overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.0123!2d-48.5186!3d-27.599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDM1JzU2LjQiUyA0OMKwMzEnMDcuMCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000"
                   width="100%"
@@ -72,10 +71,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </section>
 
-            <div className="bg-[#050d1a] py-4 w-full text-center">
-              <span className="text-[10px] text-gray-400 uppercase tracking-[0.2em]">
-                © {new Date().getFullYear()} Departamento de Matemática — UFSC
-              </span>
+            <div className="bg-[#050d1a] py-5 px-4 w-full border-t border-gray-800/40">
+              <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-gray-400 font-normal">
+                
+                {/* Direitos da Instituição */}
+                <div className="flex items-center gap-2 text-center md:text-left">
+                  <span>© {new Date().getFullYear()} Departamento de Matemática — UFSC</span>
+                  <span className="text-gray-600 text-[11px] hidden md:inline">•</span>
+                  <span className="text-gray-500 text-[11px]">Todos os direitos reservados</span>
+                </div>
+
+                {/* Crédito de Desenvolvimento */}
+                <div className="flex items-center gap-1 text-center text-gray-400">
+                  <span>Desenvolvido por</span>
+                  <a 
+                    href="https://github.com/LeyParrini" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#f0c419] font-medium hover:underline transition-colors ml-1"
+                  >
+                    Ashley Parrini
+                  </a>
+                </div>
+
+              </div>
             </div>
           </footer>
         </ThemeProvider>

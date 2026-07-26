@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen transition-colors duration-500">
-      {/* SEÇÃO DO CARROSSEL DE NOTÍCIAS */}
+      {/* Seção do carrossel de notícias */}
       <section className="relative w-full h-[500px] overflow-hidden bg-gray-900">
         {noticias.map((item, idx) => (
           <div
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
         ))}
 
-        {/* Indicadores (Pontinhos embaixo) */}
+        {/* Indicadores */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
           {noticias.map((_, idx) => (
             <button
@@ -106,7 +106,7 @@ export default function Home() {
     > ❯ </button>
   </section>
 
-    {/* 4. Botões Arredondados azuis */}
+    {/* Botões Arredondados azuis */}
     <section className="max-w-5xl mx-auto py-12 px-8 space-y-3 w-full">
       {[
         { nome: 'Administração', rota: '/administracao' },

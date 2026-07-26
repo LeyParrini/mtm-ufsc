@@ -11,7 +11,7 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Evita erro de hidratação (mismatch server/client)
+  // Para evitar erro de hidratação (mismatch server/client)
   useEffect(() => setMounted(true), []);
 
   const toggleSubmenu = (name: string) => {
@@ -129,6 +129,7 @@ export default function Header() {
                 <a href="https://petmatematica.paginas.ufsc.br/" target="_blank" className="block px-6 py-3 text-[10px] dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-50 dark:border-gray-700 uppercase">PET</a>
                 <a href="https://lemat.sites.ufsc.br/" target="_blank" className="block px-6 py-3 text-[10px] dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 border-b border-gray-50 dark:border-gray-700 uppercase">LEMAT</a>
                 <a href="https://monitoriamtm.ufsc.br/" target="_blank" className="block px-6 py-3 text-[10px] dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 uppercase">Monitorias</a>
+                <a href="https://ufscience.ufsc.br/" target="_blank" className="block px-6 py-3 text-[10px] dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 uppercase">UFScience</a>
               </div>
             </li>
 
@@ -153,7 +154,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* 3. MENU MOBILE EXIBIDO NO CLIQUE */}
+        {/* 3. Menu mobile exibido no clique */}
         {isMenuOpen && (
           <ul className="md:hidden mt-4 pb-4 space-y-1 text-[12px] font-bold uppercase text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 pt-4">
             <li><a href="/" className="block p-3 hover:bg-white dark:hover:bg-gray-800 rounded">Início</a></li>
@@ -199,6 +200,7 @@ export default function Header() {
                   <a href="https://petmatematica.paginas.ufsc.br/" target="_blank" className="block p-3 border-b dark:border-gray-700">PET</a>
                   <a href="https://lemat.sites.ufsc.br/" target="_blank" className="block p-3 border-b dark:border-gray-700">LEMAT</a>
                   <a href="https://monitoriamtm.ufsc.br/" target="_blank" className="block p-3">Monitorias</a>
+                  <a href="https://ufscience.ufsc.br/" target="_blank" className="block p-3">UFScience</a>
                 </div>
               )}
             </li>

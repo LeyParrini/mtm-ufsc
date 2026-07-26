@@ -5,13 +5,13 @@
   --foreground: #0a1931;
 }
 
-/* Certifique-se que o ThemeProvider está adicionando a classe 'dark' no <html> */
+
 .dark {
   --background: #020617;
   --foreground: #f8fafc;
 }
 
 body {
-  background-color: var(--background) !important; /* Adicione !important para garantir */
+  background-color: var(--background) !important; 
   color: var(--foreground);
 }

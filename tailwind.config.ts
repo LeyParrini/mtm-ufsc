@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // Isso aqui é o que permite o Dark Mode funcionar via classe no HTML
+  // Faz o Dark Mode funcionar por classe no HTML
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,7 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Cores da UFSC para facilitar seu uso
+        // Cores da UFSC
+        mtmVerde: "#006341",
+        mtmCinza: "#e6e6e6",
         mtmAzul: "#0a1931",
         mtmAmarelo: "#f0c419",
       },
