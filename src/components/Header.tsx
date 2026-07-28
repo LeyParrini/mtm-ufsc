@@ -67,7 +67,7 @@ export default function Header() {
 
       {/* 2. BARRA DE NAVEGAÇÃO E MENUS */}
       <nav className="bg-[#eeeeee] dark:!bg-[#0f172a] border-y border-gray-200 dark:border-gray-800 px-6 md:px-12 py-2 w-full relative z-50 transition-colors duration-300">
-        `<div className="max-w-7xl mx-auto flex justify-between items-center">  
+        <div className="max-w-7xl mx-auto flex justify-between items-center">  
 
           {/* BOTÃO HAMBÚRGUER (Celular) */}
           <button
